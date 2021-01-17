@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+<table style="width: 100%">
+	<td>
+    	<div class="sheet-col" style="border: 1px outset black;  background-color: lightgreen;">	
+        <h2>Engineering and Power Display</h2>
+        <div>
+        	<h3>Total Power Units Available:</h3>
+            	<div>
+            		<label for="attr_movePwr">Power to Movement:</label>
+                    <input style="width: 10%" type="text" data="attr_movePwr" />
+            	</div>
+            	<div>
+            		<label for="attr_shieldPwr">Power to Shields:</label>
+                    <input style="width: 10%" type="text" data="attr_shieldPwr" />
+            	</div>
+            	<div>
+            		<label for="attr_weaponPwr">Power to Weapons:</label>
+                    <input style="width: 10%" type="text" data="attr_weaponPwr" />
+            	</div>
+                <div>
+            		<label for="attr_cloakPwr">Power to Cloak:</label>
+                    <input style="width: 10%" type="text" data="attr_cloakPwr" />
+            	</div>
+                <div>
+            		<label for="attr_ecmPwr">Power to ECM:</label>
+                    <input style="width: 10%" type="text" data="attr_ecmPwr" />
+            	</div>
+        </div>
+	</td>
+</table>
+</body>
+</html>
