@@ -1,37 +1,108 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Page Title</title>
+<title>MCP</title>
+<style>
+.display {
+  background-color: lightgreen;
+  color: black;
+  border: 1px outset black;
+  padding: 5px;
+}
+.system-status {
+  background-color: beige;
+  border: 1px outset black;
+  padding: 1px;
+}
+</style>
 </head>
 <body>
+
 <table style="width: 100%">
-	<td>
-    	<div class="sheet-col" style="border: 1px outset black;  background-color: lightgreen;">	
-        <h2>Engineering and Power Display</h2>
-        <div>
-        	<h3>Total Power Units Available:</h3>
-            	<div>
-            		<label for="attr_movePwr">Power to Movement:</label>
-                    <input style="width: 10%" type="text" data="attr_movePwr" />
-            	</div>
-            	<div>
-            		<label for="attr_shieldPwr">Power to Shields:</label>
-                    <input style="width: 10%" type="text" data="attr_shieldPwr" />
-            	</div>
-            	<div>
-            		<label for="attr_weaponPwr">Power to Weapons:</label>
-                    <input style="width: 10%" type="text" data="attr_weaponPwr" />
-            	</div>
-                <div>
-            		<label for="attr_cloakPwr">Power to Cloak:</label>
-                    <input style="width: 10%" type="text" data="attr_cloakPwr" />
-            	</div>
-                <div>
-            		<label for="attr_ecmPwr">Power to ECM:</label>
-                    <input style="width: 10%" type="text" data="attr_ecmPwr" />
-            	</div>
-        </div>
-	</td>
+  <td>
+    <div class="display">	
+      <h2>Engineering and Power Display</h2>
+      <h3>Total Power Units Available:</h3>
+        
+      <div>
+        <label for="attr_movePwr">Power to Movement:</label>
+        <input style="width: 10%" type="text" data="attr_movePwr" />
+      </div>
+      
+      <div>
+        <label for="attr_shieldPwr">Power to Shields:</label>
+        <input style="width: 10%" type="text" data="attr_shieldPwr" />
+      </div>
+        
+      <div>
+        <label for="attr_weaponPwr">Power to Weapons:</label>
+        <input style="width: 10%" type="text" data="attr_weaponPwr" />
+      </div>
+        
+      <div>
+        <label for="attr_cloakPwr">Power to Cloak:</label>
+        <input style="width: 10%" type="text" data="attr_cloakPwr" />
+      </div>
+        
+      <div>
+        <label for="attr_ecmPwr">Power to ECM:</label>
+        <input style="width: 10%" type="text" data="attr_ecmPwr" />
+      </div>
+        
+    </div>
+  </td>
 </table>
+
+<table style="width: 100%">
+  <td>
+    <div class="display">	
+      <h2>Shield Display</h2>
+      <div>
+        <label><b>Shield Points Available:</b></label>
+        <label class="system-status">#</label>
+        <label><b>Max power per shield:</b></label>
+        <label class="system-status">#</label>
+      </div>
+        
+      <div>
+        <label>Shield 1</label>
+        <label class="system-status">OPER</label>
+        <input style="width: 10%" type="text" data="attr_shield1Pwr" />
+      </div>
+      
+      <div>
+        <label>Shield 2</label>
+        <label class="system-status">OPER</label>
+        <input style="width: 10%" type="text" data="attr_shield2Pwr" />
+      </div>
+      
+      <div>
+        <label>Shield 3</label>
+        <label class="system-status">OPER</label>
+        <input style="width: 10%" type="text" data="attr_shield3Pwr" />
+      </div>
+      
+      <div>
+        <label>Shield 4</label>
+        <label class="system-status">OPER</label>
+        <input style="width: 10%" type="text" data="attr_shield4Pwr" />
+      </div>
+      
+      <div>
+        <label>Shield 5</label>
+        <label class="system-status">OPER</label>
+        <input style="width: 10%" type="text" data="attr_shield5Pwr" />
+      </div>
+      
+      <div>
+        <label>Shield 6</label>
+        <label class="system-status">OPER</label>
+        <input style="width: 10%" type="text" data="attr_shield6Pwr" />
+      </div>
+        
+    </div>
+  </td>
+</table>
+
 </body>
 </html>
