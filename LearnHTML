@@ -32,7 +32,7 @@
         
       <div>
         <label for="attr_movePwr">Power to Movement:</label>
-        <input style="width: 10%" type="text" data="attr_movePwr" />
+        <input style="width: 10%" type="text" data="attr_movePwr" />    <! name instead of data?>
         <label><i>Movement Point Ratio: 3/1</i></label>
         <label for="attr_movePoints"><b>Movement Points:</b></label>
         <input style="width: 10%" type="text" data="attr_movePoints" />
