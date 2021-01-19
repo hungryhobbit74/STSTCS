@@ -10,7 +10,6 @@
   padding: 5px;
 }
 .system-status {
-  <!background-color: beige;>
   border: 1px outset black;
   padding: 1px;
 }
@@ -20,148 +19,320 @@
 .status-good {
   background-color: green;
 }
+th, td {
+  padding: 3px;
+  text-align: left;
+  width: 10%;
+}
+input {
+  text-align: center;
+}
+.no-entry {
+  background-color: #999;
+}
 </style>
 </head>
 <body>
 
-<table style="width: 100%">
-  <td>
-    <div class="display">	
-      <h2>Engineering and Power Display</h2>
-      <h3>Total Power Units Available:</h3>
-        
-      <div>
-        <label for="attr_movePwr">Power to Movement:</label>
-        <input style="width: 10%" type="text" data="attr_movePwr" />    <! name instead of data?>
-        <label><i>Movement Point Ratio: 3/1</i></label>
-        <label for="attr_movePoints"><b>Movement Points:</b></label>
-        <input style="width: 10%" type="text" data="attr_movePoints" />
-      </div>
-      
-      <div>
-        <label for="attr_shieldPwr">Power to Shields:</label>
-        <input style="width: 10%" type="text" data="attr_shieldPwr" />
-        <label><i>Shield Point Ratio: 1/3</i></label>
-        <label for="attr_shieldPoints"><b>Shield Points:</b></label>
-        <input style="width: 10%" type="text" data="attr_shieldPoints" />
-      </div>
-        
-      <div>
-        <label for="attr_weaponPwr">Power to Weapons:</label>
-        <input style="width: 10%" type="text" data="attr_weaponPwr" />
-      </div>
-        
-      <div>
-        <label>Power to Cloak:</label>
-         <select name="attr_cloakPwr" id="attr_cloakPwr">
+<! Updated Engineering and Power Display>
+<div class="display" style="width:100%">
+  <h2>Engineering and Power Display</h2>
+  
+  <table>
+    <tr>
+      <td><label for="attr_movePwr">Power to Movement:</label></td>
+      <td><input style="width: 50%" type="text" data="attr_movePwr" /></td>
+      <td><label>Move Point Ratio:</label></td>
+      <td><input class="no-entry" style="width: 50%" type="text" data="attr_movePoints" /></td>
+      <td><label for="attr_movePoints"><b>Movement Points:</b></label></td>  
+      <td><input style="width: 50%" type="text" data="attr_movePoints" /></td>  
+    </tr>
+  
+    <tr>
+      <td><label for="attr_shieldPwr">Power to Shields:</label></td>
+      <td><input style="width: 50%" type="text" data="attr_shieldPwr" /></td>
+      <td><label>Shield Point Ratio:</label></td>
+      <td><input class="no-entry" style="width: 50%" type="text" data="attr_movePoints" /></td>
+      <td><label for="attr_shieldPoints"><b>Shield Points:</b></label></td>  
+      <td><input style="width: 50%" type="text" data="attr_shieldPoints" /></td>  
+    </tr>
+    
+    <tr>
+      <td><label for="attr_weaponPwr">Power to Weapons:</label></td>
+      <td><input style="width: 50%" type="text" data="attr_weaponPwr" /></td>
+    </tr>
+    
+    <tr>
+      <td><label>Power to Cloak:</label></td>
+      <td><input style="width: 50%" type="text" data="attr_movePoints" /></td>
+      <td><label>Power Required:</label></td>
+      <td><input class="no-entry" style="width: 50%" type="text" data="attr_movePoints" /></td>
+      <td><label><b>Cloak Status:</b></label></td>
+      <td><select name="attr_cloakPwr" id="attr_cloakPwr">
                                 		<option>ON</option>
                                     <option>OFF</option>
-                                    </select>
-      </div>
-        
-      <div>
-        <label for="attr_ecmPwr">Power to ECM:</label>
-        <input style="width: 10%" type="text" data="attr_ecmPwr" />
-        <label><b>ECM Modifier:</b></label>
-        <input style="width: 10%" type="text" data="attr_ecmMod" />
-      </div>
-        
-    </div>
-  </td>
-</table>
+                                    </select></td>
+    </tr>
+    
+  </table>
+  
+</div>
 
-<table style="width: 100%">
-  <td>
-    <div class="display">	
-      <h2>Shield Display</h2>
-      <div>
-        <label><b>Shield Points Available:</b></label>
-        <label class="system-status">#</label>
-        <label><b>Max power per shield:</b></label>
-        <label class="system-status">#</label>
-      </div>
-        
-      <div>
-        <label><b>Shield 1</b></label>
-        <select name="attr_shield1Status" id="attr_shield1Status" placeholder="d10">
+<! Updated Shield Display>
+<div class="display" style="width:100%">
+  <h2>Shield Display</h2>
+
+  <table style="width:50%">
+    <tr>
+      <td><b>Shield Points Available:</b></td>
+      <td><input style="width: 50%" type="text" data="attr_shieldPoints" /></td>
+      <td></td>
+    </tr>
+    
+    <tr>
+      <td><i>Max power per shield:</i></td>
+      <td><input class="no-entry" style="width: 50%" type="text" data="attr_maxShield" /></td>
+    </tr>
+  </table>
+  
+  <table style="width:50%">
+      <tr>
+        <th style="text-align:center" >Shield</th>
+        <th>Status</th>
+        <th>Power</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    
+      <tr>
+        <td style="text-align:center">1</td>
+        <td><select name="attr_shield1Status" id="attr_shield1Status" placeholder="d10">
                                 		<option>OPER</option>
                                 		<option>DMGD 1</option>
                                 		<option>REPD 1</option>
                                 		<option>DMGD 2</option>
                                 		<option>REPD 2</option>
-                                    </select>
-        <label>Power</label>
-        <input style="width: 10%" type="text" data="attr_shield1Pwr" />                            
-      </div>
-      
-      <div>
-        <label><b>Shield 2</b></label>
-        <select name="attr_shield2Status" id="attr_shield2Status" placeholder="d10">
+                                    <option>DMGD 3</option>
+                                		<option>REPD 3</option>
+                                    <option>DMGD 4</option>
+                                		<option>REPD 4</option>
+                                    <option>OUT</option>
+                                    </select></td>
+        <td><input style="width: 100%" type="text" data="attr_shield1Pwr"/></td>                            
+      </tr>
+      <tr>
+        <td style="text-align:center">2</td>
+        <td><select name="attr_shield2Status" id="attr_shield2Status" placeholder="d10">
                                 		<option>OPER</option>
                                 		<option>DMGD 1</option>
                                 		<option>REPD 1</option>
                                 		<option>DMGD 2</option>
                                 		<option>REPD 2</option>
-                                    </select>
-        <label>Power</label>
-        <input style="width: 10%" type="text" data="attr_shield2Pwr" />
-      </div>
-      
-      <div>
-        <label><b>Shield 3</b></label>
-        <select name="attr_shield3Status" id="attr_shield3Status" placeholder="d10">
+                                    <option>DMGD 3</option>
+                                		<option>REPD 3</option>
+                                    <option>DMGD 4</option>
+                                		<option>REPD 4</option>
+                                    <option>OUT</option>
+                                    </select></td>
+        <td><input style="width: 100%" type="text" data="attr_shield2Pwr"/></td>                            
+      </tr>
+      <tr>
+        <td style="text-align:center">3</td>
+        <td><select name="attr_shield3Status" id="attr_shield3Status" placeholder="d10">
                                 		<option>OPER</option>
                                 		<option>DMGD 1</option>
                                 		<option>REPD 1</option>
                                 		<option>DMGD 2</option>
                                 		<option>REPD 2</option>
-                                    </select>
-        <label>Power</label>
-        <input style="width: 10%" type="text" data="attr_shield3Pwr" />
-      </div>
-      
-      <div>
-        <label><b>Shield 4</b></label>
-        <select name="attr_shield4Status" id="attr_shield4Status" placeholder="d10">
+                                    <option>DMGD 3</option>
+                                		<option>REPD 3</option>
+                                    <option>DMGD 4</option>
+                                		<option>REPD 4</option>
+                                    <option>OUT</option>
+                                    </select></td>
+        <td><input style="width: 100%" type="text" data="attr_shield3Pwr"/></td>                            
+      </tr>
+      <tr>
+        <td style="text-align:center">4</td>
+        <td><select name="attr_shield4Status" id="attr_shield4Status" placeholder="d10">
                                 		<option>OPER</option>
                                 		<option>DMGD 1</option>
                                 		<option>REPD 1</option>
                                 		<option>DMGD 2</option>
                                 		<option>REPD 2</option>
-                                    </select>
-        <label>Power</label>
-        <input style="width: 10%" type="text" data="attr_shield4Pwr" />
-      </div>
-      
-      <div>
-        <label><b>Shield 5</b></label>
-        <select name="attr_shield5Status" id="attr_shield5Status" placeholder="d10">
+                                    <option>DMGD 3</option>
+                                		<option>REPD 3</option>
+                                    <option>DMGD 4</option>
+                                		<option>REPD 4</option>
+                                    <option>OUT</option>
+                                    </select></td>
+        <td><input style="width: 100%" type="text" data="attr_shield4Pwr"/></td>                            
+      </tr>
+      <tr>
+        <td style="text-align:center">5</td>
+        <td><select name="attr_shield5Status" id="attr_shield5Status" placeholder="d10">
                                 		<option>OPER</option>
                                 		<option>DMGD 1</option>
                                 		<option>REPD 1</option>
                                 		<option>DMGD 2</option>
                                 		<option>REPD 2</option>
-                                    </select>
-        <label>Power</label>
-        <input style="width: 10%" type="text" data="attr_shield5Pwr" />
-      </div>
-      
-      <div>
-        <label><b>Shield 6</b></label>
-        <select name="attr_shield6Status" id="attr_shield6Status" placeholder="d10">
+                                    <option>DMGD 3</option>
+                                		<option>REPD 3</option>
+                                    <option>DMGD 4</option>
+                                		<option>REPD 4</option>
+                                    <option>OUT</option>
+                                    </select></td>
+        <td><input style="width: 100%" type="text" data="attr_shield5Pwr"/></td>                            
+      </tr>
+      <tr>
+        <td style="text-align:center">6</td>
+        <td><select name="attr_shield6Status" id="attr_shield6Status" placeholder="d10">
                                 		<option>OPER</option>
                                 		<option>DMGD 1</option>
                                 		<option>REPD 1</option>
                                 		<option>DMGD 2</option>
                                 		<option>REPD 2</option>
-                                    </select>
-        <label>Power</label>
-        <input style="width: 10%" type="text" data="attr_shield6Pwr" />
-      </div>
-        
-    </div>
-  </td>
-</table>
+                                    <option>DMGD 3</option>
+                                		<option>REPD 3</option>
+                                    <option>DMGD 4</option>
+                                		<option>REPD 4</option>
+                                    <option>OUT</option>
+                                    </select></td>
+        <td><input style="width: 100%" type="text" data="attr_shield6Pwr"/></td>
+      </tr>
+  </table>
+  
+  <footer><p>
+  System repair becomes increasingly difficult as damage level increases.  DMGD 1 = 8, DMGD 2 = 6, DMGD 3 = 4, DMGD 4 = 2.  For each attempt after a failed attempt, there is an improvment of +1. Systems that are OUT are unrepairable.
+  </p></footer>
+  
+</div>
+
+<! Weapons Display>
+<div class="display" style="width:100%">
+  <h2>Weapon Display</h2>
+  
+  <table style="width:50%">
+    <tr>
+      <td><b>Weapons Power Available:</b></td>
+      <td><input style="width: 50%" type="text" data="attr_shieldPoints" /></td>
+      <td></td>
+    </tr>
+  </table>
+  
+  <table style="width:100%">
+    <tr>
+      <th>Beam Weapon</th>
+      <th>Status</th>
+      <th>Firing Arc</th>
+      <th>Max Power</th>
+      <th>Power</th>
+      <th></th>
+      <th>Missile Weapon</th>
+      <th>Status</th>
+      <th>Firing Arc</th>
+      <th>Power</th>
+    </tr>
+    
+    <tr>
+      <td><input class="no-entry" style="width: 50%" type="text"/></td>
+      <td><select name="attr_weaponStatus" id="attr_weaponStatus">
+                                		<option>OPER</option>
+                                    <option>DMGD</option>
+                                    <option>REPD</option>
+                                    <option>OUT</option>
+                                    </select></td>
+      <td><input class="no-entry" style="width: 50%" type="text"/></td>
+      <td><input class="no-entry" style="width: 50%" type="text"/></td>
+      <td><input style="width: 50%" type="text"/></td>
+      <td></td>
+      <td><input class="no-entry" style="width: 50%" type="text"/></td>
+      <td><select name="attr_weaponStatus" id="attr_weaponStatus">
+                                		<option>OPER</option>
+                                    <option>DMGD</option>
+                                    <option>REPD</option>
+                                    <option>OUT</option>
+                                    </select></td>
+      <td><input class="no-entry" style="width: 50%" type="text"/></td>
+      <td><input style="width: 50%" type="text"/></td>
+    </tr>
+    <tr>
+      <td><input class="no-entry" style="width: 50%" type="text"/></td>
+      <td><select name="attr_weaponStatus" id="attr_weaponStatus">
+                                		<option>OPER</option>
+                                    <option>DMGD</option>
+                                    <option>REPD</option>
+                                    <option>OUT</option>
+                                    </select></td>
+      <td><input class="no-entry" style="width: 50%" type="text"/></td>
+      <td><input class="no-entry" style="width: 50%" type="text"/></td>
+      <td><input style="width: 50%" type="text"/></td>
+      <td></td>
+      <td><input class="no-entry" style="width: 50%" type="text"/></td>
+      <td><select name="attr_weaponStatus" id="attr_weaponStatus">
+                                		<option>OPER</option>
+                                    <option>DMGD</option>
+                                    <option>REPD</option>
+                                    <option>OUT</option>
+                                    </select></td>
+      <td><input class="no-entry" style="width: 50%" type="text"/></td>
+      <td><input style="width: 50%" type="text"/></td>
+    </tr>
+    <tr>
+      <td><input class="no-entry" style="width: 50%" type="text"/></td>
+      <td><select name="attr_weaponStatus" id="attr_weaponStatus">
+                                		<option>OPER</option>
+                                    <option>DMGD</option>
+                                    <option>REPD</option>
+                                    <option>OUT</option>
+                                    </select></td>
+      <td><input class="no-entry" style="width: 50%" type="text"/></td>
+      <td><input class="no-entry" style="width: 50%" type="text"/></td>
+      <td><input style="width: 50%" type="text"/></td>
+      <td></td>
+      <td><input class="no-entry" style="width: 50%" type="text"/></td>
+      <td><select name="attr_weaponStatus" id="attr_weaponStatus">
+                                		<option>OPER</option>
+                                    <option>DMGD</option>
+                                    <option>REPD</option>
+                                    <option>OUT</option>
+                                    </select></td>
+      <td><input class="no-entry" style="width: 50%" type="text"/></td>
+      <td><input style="width: 50%" type="text"/></td>
+    </tr>
+    <tr>
+      <td><input class="no-entry" style="width: 50%" type="text"/></td>
+      <td><select name="attr_weaponStatus" id="attr_weaponStatus">
+                                		<option>OPER</option>
+                                    <option>DMGD</option>
+                                    <option>REPD</option>
+                                    <option>OUT</option>
+                                    </select></td>
+      <td><input class="no-entry" style="width: 50%" type="text"/></td>
+      <td><input class="no-entry" style="width: 50%" type="text"/></td>
+      <td><input style="width: 50%" type="text"/></td>
+      <td></td>
+      <td><input class="no-entry" style="width: 50%" type="text"/></td>
+      <td><select name="attr_weaponStatus" id="attr_weaponStatus">
+                                		<option>OPER</option>
+                                    <option>DMGD</option>
+                                    <option>REPD</option>
+                                    <option>OUT</option>
+                                    </select></td>
+      <td><input class="no-entry" style="width: 50%" type="text"/></td>
+      <td><input style="width: 50%" type="text"/></td>
+    </tr>
+  </table>
+  
+  <footer><p>
+  A beam weapon may be repaired with a 8 or less. For each attempt after a failed attempt, there is an improvment of +1. Once repaired, the max power of the weapon is halved.
+  </p>
+  <p>
+  A missile weapon may be repaired with a 6 or less. For each attempt after a failed attempt, there is an improvment of +1. Once repaired, the weapon suffers a -1 to hit.
+  </p>
+  </footer>
+</div>
 
 </body>
 </html>
