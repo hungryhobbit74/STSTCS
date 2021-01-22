@@ -36,7 +36,7 @@ input {
 
 <! Starship and Crew Data>
 <div class="display" style="width:100%">
-  <h3>Starship and Crew Data</h3>
+  <h2>Starship and Crew Data</h2>
   
   <table>
     
@@ -80,12 +80,45 @@ input {
   
   <table>
     <tr>
+      <td><label for="attr_portWarp"><b>Port Warp Engine:</b></label></td>
+      <td><input style="width: 50%" type="text" data="attr_portWarp" /></td>
+      <td><label for="attr_stbdWarp"><b>Stbd Warp Engine:</b></label></td>
+      <td><input style="width: 50%" type="text" data="attr_stbdWarp" /></td>
+      <td><label for="attr_impulsePower"><b>Impulse Engine:</b></label></td>
+      <td><input style="width: 50%" type="text" data="attr_impulsePower" /></td>
+    </tr>
+  </table>
+  
+  <table>
+    <tr>
+      <td><label for="attr_totalPower"><b>Total Power Available:</b></label></td>
+      <td><input class="no-entry" style="width: 50%" type="text" data="attr_movePwr" /></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    
+    <tr>
       <td><label for="attr_movePwr">Power to Movement:</label></td>
       <td><input style="width: 50%" type="text" data="attr_movePwr" /></td>
       <td><label>Move Point Ratio:</label></td>
       <td><input class="no-entry" style="width: 50%" type="text" data="attr_movePoints" /></td>
-      <td><label for="attr_movePoints"><b>Movement Points:</b></label></td>  
-      <td><input style="width: 50%" type="text" data="attr_movePoints" /></td>  
+      <td style="text-align:center"><b>Maneuver Grid:</b></td>
+      <td><select name="attr_manGrid" id="attr_manGrid" placeholder="d10">
+                                		<option>OPER</option>
+                                		<option>DMGD 1</option>
+                                		<option>REPD 1</option>
+                                		<option>DMGD 2</option>
+                                		<option>REPD 2</option>
+                                    <option>DMGD 3</option>
+                                		<option>REPD 3</option>
+                                    <option>DMGD 4</option>
+                                		<option>REPD 4</option>
+                                    <option>OUT</option>
+                                    </select></td>
+      
+                                    
     </tr>
   
     <tr>
@@ -93,13 +126,39 @@ input {
       <td><input style="width: 50%" type="text" data="attr_shieldPwr" /></td>
       <td><label>Shield Point Ratio:</label></td>
       <td><input class="no-entry" style="width: 50%" type="text" data="attr_movePoints" /></td>
-      <td><label for="attr_shieldPoints"><b>Shield Points:</b></label></td>  
-      <td><input style="width: 50%" type="text" data="attr_shieldPoints" /></td>  
+      <td style="text-align:center"><b>Shield Grid:</b></td>
+      <td><select name="attr_shieldGrid" id="attr_shieldGrid" placeholder="d10">
+                                		<option>OPER</option>
+                                		<option>DMGD 1</option>
+                                		<option>REPD 1</option>
+                                		<option>DMGD 2</option>
+                                		<option>REPD 2</option>
+                                    <option>DMGD 3</option>
+                                		<option>REPD 3</option>
+                                    <option>DMGD 4</option>
+                                		<option>REPD 4</option>
+                                    <option>OUT</option>
+                                    </select></td>
     </tr>
     
     <tr>
       <td><label for="attr_weaponPwr">Power to Weapons:</label></td>
       <td><input style="width: 50%" type="text" data="attr_weaponPwr" /></td>
+      <td></td>
+      <td></td>
+      <td style="text-align:center"><b>Weapons Grid:</b></td>
+      <td><select name="attr_wepGrid" id="attr_wepGrid" placeholder="d10">
+                                		<option>OPER</option>
+                                		<option>DMGD 1</option>
+                                		<option>REPD 1</option>
+                                		<option>DMGD 2</option>
+                                		<option>REPD 2</option>
+                                    <option>DMGD 3</option>
+                                		<option>REPD 3</option>
+                                    <option>DMGD 4</option>
+                                		<option>REPD 4</option>
+                                    <option>OUT</option>
+                                    </select></td>
     </tr>
     
     <tr>
@@ -128,19 +187,19 @@ input {
 </div>
 
 <! Updated Shield Display>
-<div class="display" style="width:100%">
+<div class="display" style="width:50%">
   <h2>Shield Display</h2>
 
   <table style="width:50%">
     <tr>
       <td><b>Shield Points Available:</b></td>
-      <td><input style="width: 50%" type="text" data="attr_shieldPoints" /></td>
+      <td><input style="width: 100%" type="text" data="attr_shieldPoints" /></td>
       <td></td>
     </tr>
     
     <tr>
       <td><i>Max power per shield:</i></td>
-      <td><input class="no-entry" style="width: 50%" type="text" data="attr_maxShield" /></td>
+      <td><input class="no-entry" style="width: 100%" type="text" data="attr_maxShield" /></td>
     </tr>
   </table>
   
@@ -255,6 +314,8 @@ input {
   <footer><p>
   System repair becomes increasingly difficult as damage level increases.  DMGD 1 = 8, DMGD 2 = 6, DMGD 3 = 4, DMGD 4 = 2.  For each attempt after a failed attempt, there is an improvment of +1. Systems that are OUT are unrepairable.
   </p></footer>
+  
+  
   
 </div>
 
