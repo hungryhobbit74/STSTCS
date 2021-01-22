@@ -73,6 +73,15 @@ input {
                                     <option>OFF</option>
                                     </select></td>
     </tr>
+      <td><label for="attr_ecmPwr">Power to ECM:</label></td>
+      <td><input style="width: 50%" type="text" data="attr_ecmPwr" /></td>
+      <td></td>
+      <td></td>
+      <td><label><b>ECM Modifier:</b></label></td>
+      <td><input style="width: 50%" type="text" data="attr_ecmModifier" /></td>
+    <tr>
+      
+    </tr>
     
   </table>
   
