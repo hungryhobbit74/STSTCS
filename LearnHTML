@@ -34,6 +34,46 @@ input {
 </head>
 <body>
 
+<! Starship and Crew Data>
+<div class="display" style="width:100%">
+  <h3>Starship and Crew Data</h3>
+  
+  <table>
+    
+    <tr>
+      <td><label for="attr_captName">Captain's Name:</label></td>
+      <td><input style="width: 75%" type="text" data="attr_captName" /></td>
+      <td><label for="attr_shipAlign">Alignment:</label></td>
+      <td><input style="width: 75%" type="text" data="attr_shipAlign" /></td>
+      <td><label for="attr_wepsFactor">WDF:</label></td>
+      <td><input style="width: 50%" type="text" data="attr_wepsFactor" /></td>
+    </tr>
+    
+    <tr>
+      <td><label for="attr_shipName">Vessel Name:</label></td>
+      <td><input style="width: 75%" type="text" data="attr_shipName" /></td>
+      <td><label for="attr_captSkill">Captain's Skill Rating:</label></td>
+      <td><input style="width: 50%" type="text" data="attr_captSkill" /></td>
+      <td><label for="attr_defFactor">D:</label></td>
+      <td><input style="width: 50%" type="text" data="attr_defFactor" /></td>  
+    </tr>
+  
+    <tr>
+      <td><label for="attr_shipClass">Vessel Class:</label></td>
+      <td><input style="width: 75%" type="text" data="attr_shipClass" /></td>
+      <td><label for="attr_crewSkill">Crew Efficiency:</label></td>  
+      <td><input style="width: 50%" type="text" data="attr_crewSkill" /></td>
+      <td><label for="attr_combatEff">CE:</label></td>
+      <td><input style="width: 50%" type="text" data="attr_combatEff" /></td>
+    </tr>
+    
+    <tr>
+      <td><label for="attr_classModel">Model:</label></td>  
+      <td><input style="width: 50%" type="text" data="attr_classModel" /></td>
+    </tr>
+  </table>
+</div>
+
 <! Updated Engineering and Power Display>
 <div class="display" style="width:100%">
   <h2>Engineering and Power Display</h2>
